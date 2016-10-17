@@ -6,11 +6,15 @@ var Menu = require('./Menu.jsx');
 
 var App = React.createClass({
     render() {
+      divStyle = {
+        background: "#f0ebe5"
+      }
+
       return(
-        <div>
+        <div style={divStyle} className="App container-fluid">
           <Header />
           <Menu />
-          <p>Some Text</p>
+          {this.props.children}
           <Footer />
         </div>
       );

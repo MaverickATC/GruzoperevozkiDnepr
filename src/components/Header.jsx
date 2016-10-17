@@ -21,7 +21,7 @@ var Header = React.createClass({
               <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <Logo />
               </div>
-              <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-6">
+              <div className="col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10">
                 <Phones />
               </div>
             </div>

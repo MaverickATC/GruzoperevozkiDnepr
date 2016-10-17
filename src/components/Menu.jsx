@@ -4,16 +4,16 @@ var Menu = React.createClass({
   render(){
     divStyle = {
       height: 35,
-      background: "#ccc",
       margin: 0
     }
 
     btnDivStyle = {
-      padding: 0
+      padding: 2
     }
 
     btnStyle = {
-      width: "100%"
+      width: "100%",
+      outline: "none"
     }
 
     return(
@@ -21,22 +21,22 @@ var Menu = React.createClass({
         <div style={btnDivStyle} className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div style={divStyle} className="row">
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">1</button>
+                <button style={btnStyle} className="btn btn-primary">Главная</button>
               </div>
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">2</button>
+                <button style={btnStyle} className="btn btn-primary">Авто</button>
               </div>
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">3</button>
+                <button style={btnStyle} className="btn btn-primary">Услуги</button>
               </div>
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">4</button>
+                <button style={btnStyle} className="btn btn-primary">Фото</button>
               </div>
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">5</button>
+                <button style={btnStyle} className="btn btn-primary">О нас</button>
               </div>
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">6</button>
+                <button style={btnStyle} className="btn btn-primary">Контакты</button>
               </div>
             </div>
         </div>

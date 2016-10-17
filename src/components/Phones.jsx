@@ -3,9 +3,10 @@ var React = require('react');
 var Phones = React.createClass({
   render(){
     var divStyle = {
-        width: 300,
-        background: "#222",
-        height: 50,
+        width: 150,
+        background: "#aaa",
+        height: 40,
+        marginTop: 5
     }
 
     return(
