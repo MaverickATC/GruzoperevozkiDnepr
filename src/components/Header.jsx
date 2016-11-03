@@ -6,7 +6,9 @@ var Header = React.createClass({
     render() {
       var divStyle = {
         background: '#ccc',
-        height: 300
+        height: 300,
+        padding: 0,
+        margin: 0
       }
 
       var rowStyle = {
@@ -14,18 +16,25 @@ var Header = React.createClass({
       }
 
       return(
-        <div className="row page-header">
-          <div style={divStyle} className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div>
+          <div className="row" style={divStyle}>
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <div style={rowStyle} className="row"></div>
+                  <div style={rowStyle} className="row">
+                    <Logo />
+                  </div>
+                </div>
+                <div className="col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10">
+                  <div style={rowStyle} className="row"></div>
+                  <div style={rowStyle} className="row">
+                    <Phones />
+                  </div>
+                </div>
+              </div>
 
-            <div className="row">
-              <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <Logo />
-              </div>
-              <div className="col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10">
-                <Phones />
-              </div>
             </div>
-
           </div>
         </div>
       );

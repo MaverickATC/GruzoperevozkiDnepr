@@ -8,14 +8,15 @@ var App = React.createClass({
     render() {
       divStyle = {
         background: "#f0ebe5"
+
       }
 
       return(
-        <div style={divStyle} className="App container-fluid">
-          <Header />
+        <div style={divStyle} className="App">
+          <header><Header /></header>
           <Menu />
           {this.props.children}
-          <Footer />
+          <footer><Footer /></footer>
         </div>
       );
     }

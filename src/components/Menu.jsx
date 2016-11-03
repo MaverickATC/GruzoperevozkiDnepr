@@ -16,9 +16,14 @@ var Menu = React.createClass({
       outline: "none"
     }
 
+    mS ={
+      width: "100%",
+      margin: 0
+    }
+
     return(
-      <div className="menu row">
-        <div style={btnDivStyle} className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div className="menu row" style={mS}>
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div style={divStyle} className="row">
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <button style={btnStyle} className="btn btn-primary">Главная</button>
@@ -26,15 +31,11 @@ var Menu = React.createClass({
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <button style={btnStyle} className="btn btn-primary">Авто</button>
               </div>
-              <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">Услуги</button>
-              </div>
+
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <button style={btnStyle} className="btn btn-primary">Фото</button>
               </div>
-              <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <button style={btnStyle} className="btn btn-primary">О нас</button>
-              </div>
+
               <div style={btnDivStyle} className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <button style={btnStyle} className="btn btn-primary">Контакты</button>
               </div>

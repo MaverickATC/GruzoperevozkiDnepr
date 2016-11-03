@@ -12,13 +12,10 @@ var Phones = React.createClass({
     return(
       <div>
         <div style={divStyle} className="phone">
-          <span>000 123 45 67</span>
+          <span><a href="tel:+380987077344">+38(098)707-73-44</a></span>
         </div>
         <div style={divStyle} className="phone">
-          <span>000 123 45 67</span>
-        </div>
-        <div style={divStyle} className="phone">
-          <span>000 123 45 67</span>
+          <span><a href="tel:+380507871230">+38(050)787-12-30</a></span>
         </div>
       </div>
     );

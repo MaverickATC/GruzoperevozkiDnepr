@@ -6,11 +6,14 @@ var Logo = React.createClass({
         width: 300,
         background: "#fff",
         height: 100,
-        marginTop: 25
+        marginLeft: 25,
+        marginTop: 5
     }
 
     return(
-      <div style={divStyle} className="logo">Logo</div>
+      <div style={divStyle} className="logo"> Logo <br />
+        ЧП Андрейченко
+      </div>
     );
   }
 });
