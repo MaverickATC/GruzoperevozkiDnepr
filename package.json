@@ -1,5 +1,5 @@
 {
-  "name": "react-skeleton",
+  "name": "Gruzoperevozki",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,6 +23,7 @@
     "history": "^1.13.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-photo-gallery": "^4.2.14",
     "react-router": "^2.8.1",
     "watchify": "^3.7.0"
   }

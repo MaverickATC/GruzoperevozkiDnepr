@@ -11,17 +11,17 @@ var History = new CreateHistory({
 
 var App = require('./components/App.jsx');
 var Home = require('./components/pages/Home.jsx');
-var Uslugi = require('./components/pages/Uslugi.jsx');
-var About = require('./components/pages/About.jsx');
 var Contacts = require('./components/pages/Contacts.jsx');
+var Cars = require('./components/pages/Cars.jsx');
+var Photo = require('./components/pages/Photo.jsx');
 
 var Routes = (
   <Router history={History}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="/uslugi" component={Uslugi} />
-      <Route path="/about" component={About} />
       <Route path="/contacts" component={Contacts} />
+      <Route path="/cars" component={Cars} />
+      <Route path="/photo" component={Photo} />
     </Route>
   </Router>
 );

@@ -2,7 +2,27 @@ var React = require('react');
 
 var Header = require('./Header.jsx');
 var Footer = require('./Footer.jsx');
-var Menu = require('./Menu.jsx');
+var NavBar = require('./nav/NavBar.jsx');
+
+var navLinks = [
+  {
+    title: "Главная",
+    href: "/"
+  },
+  {
+    title: "Авто",
+    href: "/cars"
+  },
+  {
+    title: "Фото",
+    href: "/photo"
+  },
+  {
+    title: "Контакты",
+    href: "/contacts"
+  }
+
+];
 
 var App = React.createClass({
     render() {
@@ -14,7 +34,7 @@ var App = React.createClass({
       return(
         <div style={divStyle} className="App">
           <header><Header /></header>
-          <Menu />
+          <NavBar navData={navLinks} />
           {this.props.children}
           <footer><Footer /></footer>
         </div>
