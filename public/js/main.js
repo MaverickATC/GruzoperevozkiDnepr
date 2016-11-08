@@ -31183,7 +31183,7 @@ var Footer = React.createClass({
       { className: "container-fluid" },
       React.createElement(
         "div",
-        { className: "panel panel-default", style: { margin: "auto", height: "100" } },
+        { className: "panel panel-default", style: { margin: "auto", height: 100 } },
         React.createElement(
           "div",
           { className: "row" },
@@ -31432,7 +31432,7 @@ var NavBar = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid' },
+      { className: 'container-fluid', style: { padding: 0 } },
       React.createElement(
         'nav',
         { className: 'navbar navbar-default', style: { borderRadius: 0, margin: 'auto' } },
@@ -31512,7 +31512,7 @@ var Cars = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid' },
+      { className: 'container-fluid', style: { padding: 0 } },
       React.createElement(List, { carData: cars })
     );
   }
@@ -31534,7 +31534,7 @@ var Contacts = React.createClass({
 
     return React.createElement(
       "div",
-      { className: "container-fluid" },
+      { className: "container-fluid", style: { padding: 0 } },
       React.createElement(
         "div",
         { className: "row", style: { padding: 15 } },
@@ -31625,7 +31625,7 @@ var Home = React.createClass({
 
     return React.createElement(
       "div",
-      { className: "container-fluid" },
+      { className: "container-fluid", style: { padding: 0 } },
       React.createElement(
         "div",
         { style: { padding: 15 } },
@@ -31653,7 +31653,7 @@ var Photo = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid', style: { padding: 15 } },
+      { className: 'container-fluid', style: { paddingTop: 15, paddingBottom: 15, baddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         'div',
         { className: 'panel panel-default', style: { margin: "auto" } },

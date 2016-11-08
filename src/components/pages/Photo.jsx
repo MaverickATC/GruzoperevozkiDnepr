@@ -8,7 +8,7 @@ var Photo = React.createClass({
     }
 
     return(
-      <div className="container-fluid" style={{padding:15}}>
+      <div className="container-fluid" style={{paddingTop:15,paddingBottom:15,baddingLeft:0,paddingRight:0}}>
         <div className="panel panel-default" style={{margin:"auto"}}>
           <Gallery photos={PHOTO_SET} lightboxShowImageCount={true}/>
         </div>

@@ -16,7 +16,7 @@ var Cars = React.createClass({
     }
 
     return(
-      <div className="container-fluid">
+      <div className="container-fluid" style={{padding:0}}>
         <List carData={cars}/>
       </div>
     );

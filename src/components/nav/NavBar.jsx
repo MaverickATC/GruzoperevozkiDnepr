@@ -10,7 +10,7 @@ var NavBar = React.createClass({
     };
 
     return(
-      <div className="container-fluid">
+      <div className="container-fluid" style={{padding:0}}>
       <nav className="navbar navbar-default" style={{borderRadius: 0,margin: 'auto'}}>
         <div className="navbar-header" style={{paddingLeft: 15,paddingTop: 5}}>
           <button type="button" style={{marginTop: 3}} className="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">

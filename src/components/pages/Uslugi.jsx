@@ -4,7 +4,8 @@ var Uslugi = React.createClass({
     render() {
       divStyle = {
         background: "#f0ebe5",
-        width: "100%"
+        width: "100%",
+        padding: 0
       }
 
       return(

@@ -8,7 +8,7 @@ var Contacts = React.createClass({
     }
 
     return(
-      <div className="container-fluid">
+      <div className="container-fluid" style={{padding:0}}>
         <div className="row" style={{padding:15}}>
           <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <h1>Контакты</h1>

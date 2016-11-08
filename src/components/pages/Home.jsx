@@ -8,7 +8,7 @@ var Home = React.createClass({
       }
 
       return(
-        <div className="container-fluid">
+        <div className="container-fluid" style={{padding:0}}>
           <div style={{padding:15}}>
             <h1>Home Page</h1>
           </div>
