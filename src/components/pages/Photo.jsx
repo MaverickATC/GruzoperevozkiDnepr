@@ -8,8 +8,10 @@ var Photo = React.createClass({
     }
 
     return(
-      <div>
-        <Gallery photos={PHOTO_SET} />
+      <div className="container-fluid" style={{padding:15}}>
+        <div className="panel panel-default" style={{margin:"auto"}}>
+          <Gallery photos={PHOTO_SET} lightboxShowImageCount={true}/>
+        </div>
       </div>
     );
   }
@@ -17,33 +19,111 @@ var Photo = React.createClass({
 
 var PHOTO_SET = [
   {
-    src: 'http://example.com/example/img1_small.jpg',
-    width: 681,
-    height: 1024,
-    aspectRatio: 1.5,
+    src: '/img/1.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
     lightboxImage:{
-    src: 'http://example.com/example/img1_large.jpg',
-    srcset: [
-      'http://example.com/example/img1_1024.jpg 1024w',
-      'http://example.com/example/img1_800.jpg 800w',
-      'http://example.com/example/img1_500.jpg 500w',
-      'http://example.com/example/img1_320.jpg 320w',
-    ]
+    src: '/img/1.jpg'
     }
   },
   {
-    src: 'http://example.com/example/img2_small.jpg',
-    width: 600,
-    height: 600,
-    aspectRatio: 1,
+    src: '/img/2.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
     lightboxImage:{
-    src: 'http://example.com/example/img2_large.jpg',
-    srcset: [
-      'http://example.com/example/img2_1024.jpg 1024w',
-      'http://example.com/example/img2_800.jpg 800w',
-      'http://example.com/example/img2_500.jpg 500w',
-      'http://example.com/example/img2_320.jpg 320w',
-    ]
+    src: '/img/2.jpg'
+    }
+  },
+  {
+    src: '/img/3.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/3.jpg'
+    }
+  },
+  {
+    src: '/img/4.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/4.jpg'
+    }
+  },
+  {
+    src: '/img/5.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/5.jpg'
+    }
+  },
+  {
+    src: '/img/6.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/6.jpg'
+    }
+  },
+  {
+    src: '/img/1.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/1.jpg'
+    }
+  },
+  {
+    src: '/img/2.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/2.jpg'
+    }
+  },
+  {
+    src: '/img/3.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/3.jpg'
+    }
+  },
+  {
+    src: '/img/4.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/4.jpg'
+    }
+  },
+  {
+    src: '/img/5.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/5.jpg'
+    }
+  },
+  {
+    src: '/img/6.jpg',
+    width: 1280,
+    height: 960,
+    aspectRatio: 1.33,
+    lightboxImage:{
+    src: '/img/6.jpg'
     }
   }
 ];

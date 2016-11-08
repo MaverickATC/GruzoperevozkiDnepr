@@ -3,13 +3,15 @@ var React = require('react');
 var Home = React.createClass({
     render() {
       divStyle = {
-        background: "#f0ebe5",
+        //background: "#f0ebe5",
         width: "100%"
       }
 
       return(
-        <div style={divStyle} >
-          <p>Home Page</p>
+        <div className="container-fluid">
+          <div style={{padding:15}}>
+            <h1>Home Page</h1>
+          </div>
         </div>
       );
     }

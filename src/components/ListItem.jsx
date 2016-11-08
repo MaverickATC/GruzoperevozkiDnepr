@@ -4,8 +4,8 @@ var CarCard = require('./CarCard.jsx');
 var ListItem = React.createClass({
   render: function(){
     return(
-      <li>
-        <CarCard photo={this.props.photo} text={this.props.text} />
+      <li style={{listStyle: "none", paddingTop: 10}}>
+        <CarCard photo={this.props.photo} title={this.props.title} price={this.props.price}/>
       </li>
     );
   }

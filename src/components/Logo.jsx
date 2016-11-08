@@ -4,9 +4,8 @@ var Logo = React.createClass({
   render(){
     var divStyle = {
         width: 300,
-        background: "#fff",
-        height: 100,
-        marginLeft: 25,
+        background: "#aaa",
+        height: 85,
         marginTop: 5
     }
 

@@ -24,10 +24,11 @@ var navLinks = [
 
 ];
 
+
 var App = React.createClass({
     render() {
       divStyle = {
-        background: "#f0ebe5"
+        //background: "#f0ebe5"
 
       }
 
