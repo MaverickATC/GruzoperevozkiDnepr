@@ -6,8 +6,10 @@ var Phones = require('./Phones.jsx');
 var Header = React.createClass({
     render() {
       var divStyle = {
-        background: "url(/img/header.jpg)",
-        height: 200,
+        backgroundImage: "url(./img/header2.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% 100%",
+        height: 400,
         padding: 0,
         margin: 0
       }
@@ -17,20 +19,15 @@ var Header = React.createClass({
       }
 
       return(
-        <div className="page-header container-fluid">
-          <div className="row" style={divStyle}>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div className="row" style={rowStyle}>
-                <div className="col-sm-6 col-md-6 col-lg-6 hidden-xs">
-                  <div className="pull-left"><Logo /></div>
-                  <div className="visible-xs-block"><LogoMobile /></div>
-                </div>
-                <div className="col-sm-6 col-md-6 col-lg-6 hidden-xs">
-                  <div className="pull-right"><Phones /></div>
-                </div>
-                <div className="col-xs-12 visible-xs-block">Грузоперевозки Днепр</div>
-              </div>
+        <div className="page-header container-fluid" style={{padding:0,marginTop:15,marginBottom:15}}>
+          <div className="row hidden-xs" style={divStyle}>
+            <div className="col-sm-12 col-md-12 col-lg-12" style={{paddingTop:20}}>
+              <Logo />
+              <Phones />
             </div>
+          </div>
+          <div className="row visible-xs-block" style={{margin:0,padding:0,width:"100%",height:100}}>
+            <LogoMobile />
           </div>
         </div>
       );

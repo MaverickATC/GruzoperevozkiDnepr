@@ -31142,7 +31142,7 @@ var CarCard = React.createClass({
       { style: divStyle, className: "row panel panel-default" },
       React.createElement(
         "div",
-        { className: " col-xs-4 col-sm-6 col-md-4 col-lg-4 hidden-xs" },
+        { className: "col-sm-6 col-md-4 col-lg-4 hidden-xs" },
         React.createElement("img", { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: "carPhoto" })
       ),
       React.createElement(
@@ -31160,7 +31160,21 @@ var CarCard = React.createClass({
         React.createElement(
           "div",
           { className: "panel-body" },
-          this.props.price
+          React.createElement(
+            "div",
+            null,
+            this.props.size
+          ),
+          React.createElement(
+            "div",
+            null,
+            this.props.priceCity
+          ),
+          React.createElement(
+            "div",
+            null,
+            this.props.priceUncity
+          )
         )
       )
     );
@@ -31172,27 +31186,31 @@ module.exports = CarCard;
 
 },{"react":298}],303:[function(require,module,exports){
 var React = require('react');
+var Link = require('react-router').Link;
 
 var Footer = React.createClass({
-  displayName: "Footer",
+  displayName: 'Footer',
 
   render() {
 
     return React.createElement(
-      "div",
-      { className: "container-fluid" },
+      'div',
+      { className: 'container-fluid', style: { paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
-        "div",
-        { className: "panel panel-default", style: { margin: "auto", height: 100 } },
+        'div',
+        { className: 'panel panel-default', style: { margin: "auto", height: 50 } },
         React.createElement(
-          "div",
-          { className: "row" },
+          'div',
+          { className: 'row' },
           React.createElement(
-            "div",
-            { className: "col-xs-12 col-sm-12 col-md-12 col-lg-12 " },
-            "Footer ",
-            React.createElement("br", null),
-            "Copyright"
+            'div',
+            { className: 'col-xs-12 col-sm-12 col-md-12 col-lg-12', style: { paddingTop: 15, display: "flex", alignItems: "center", justifyContent: "center" } },
+            'Copyright @ 2016  \xA0  \xA0 ',
+            React.createElement(
+              Link,
+              { to: '/' },
+              '\u0413\u0440\u0443\u0437\u043E\u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0438 \u0414\u043D\u0435\u043F\u0440'
+            )
           )
         )
       )
@@ -31202,7 +31220,7 @@ var Footer = React.createClass({
 
 module.exports = Footer;
 
-},{"react":298}],304:[function(require,module,exports){
+},{"react":298,"react-router":90}],304:[function(require,module,exports){
 var React = require('react');
 var Logo = require('./Logo.jsx');
 var LogoMobile = require('./LogoMobile.jsx');
@@ -31213,8 +31231,10 @@ var Header = React.createClass({
 
   render() {
     var divStyle = {
-      background: "url(/img/header.jpg)",
-      height: 200,
+      backgroundImage: "url(./img/header2.jpg)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "100% 100%",
+      height: 400,
       padding: 0,
       margin: 0
     };
@@ -31225,46 +31245,21 @@ var Header = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'page-header container-fluid' },
+      { className: 'page-header container-fluid', style: { padding: 0, marginTop: 15, marginBottom: 15 } },
       React.createElement(
         'div',
-        { className: 'row', style: divStyle },
+        { className: 'row hidden-xs', style: divStyle },
         React.createElement(
           'div',
-          { className: 'col-xs-12 col-sm-12 col-md-12 col-lg-12' },
-          React.createElement(
-            'div',
-            { className: 'row', style: rowStyle },
-            React.createElement(
-              'div',
-              { className: 'col-sm-6 col-md-6 col-lg-6 hidden-xs' },
-              React.createElement(
-                'div',
-                { className: 'pull-left' },
-                React.createElement(Logo, null)
-              ),
-              React.createElement(
-                'div',
-                { className: 'visible-xs-block' },
-                React.createElement(LogoMobile, null)
-              )
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-sm-6 col-md-6 col-lg-6 hidden-xs' },
-              React.createElement(
-                'div',
-                { className: 'pull-right' },
-                React.createElement(Phones, null)
-              )
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-xs-12 visible-xs-block' },
-              '\u0413\u0440\u0443\u0437\u043E\u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0438 \u0414\u043D\u0435\u043F\u0440'
-            )
-          )
+          { className: 'col-sm-12 col-md-12 col-lg-12', style: { paddingTop: 20 } },
+          React.createElement(Logo, null),
+          React.createElement(Phones, null)
         )
+      ),
+      React.createElement(
+        'div',
+        { className: 'row visible-xs-block', style: { margin: 0, padding: 0, width: "100%", height: 100 } },
+        React.createElement(LogoMobile, null)
       )
     );
   }
@@ -31282,7 +31277,7 @@ var List = React.createClass({
   render: function () {
 
     var listItems = function (item, index) {
-      return React.createElement(ListItem, { key: item.id + index, photo: item.photo, title: item.title, price: item.price });
+      return React.createElement(ListItem, { key: item.id + index, photo: item.photo, title: item.title, size: item.size, priceCity: item.priceCity, priceUncity: item.priceUncity });
     };
 
     return React.createElement(
@@ -31307,7 +31302,7 @@ var ListItem = React.createClass({
     return React.createElement(
       'li',
       { style: { listStyle: "none", paddingTop: 10 } },
-      React.createElement(CarCard, { photo: this.props.photo, title: this.props.title, price: this.props.price })
+      React.createElement(CarCard, { photo: this.props.photo, title: this.props.title, size: this.props.size, priceCity: this.props.priceCity, priceUncity: this.props.priceUncity })
     );
   }
 
@@ -31350,14 +31345,15 @@ var LogoMobile = React.createClass({
   render() {
     var divStyle = {
       //width: 300,
-      background: "#aaa",
-      height: 85,
-      marginTop: 5
+      background: "#fff",
+      //height: 85,
+      margin: 0,
+      paddingTop: 20
     };
 
     return React.createElement(
       "div",
-      { style: divStyle, className: "logo" },
+      { style: divStyle, className: "logo text-center" },
       "\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E"
     );
   }
@@ -31373,8 +31369,8 @@ var Phones = React.createClass({
 
   render() {
     var divStyle = {
-      //width: 150,
-      //background: "#aaa",
+      width: 150,
+      background: "#aaa",
       height: 40,
       marginTop: 10,
       paddingLeft: 5,
@@ -31386,7 +31382,7 @@ var Phones = React.createClass({
       null,
       React.createElement(
         "div",
-        { style: divStyle, className: "phone panel panel-default" },
+        { style: divStyle, className: "phone" },
         React.createElement(
           "span",
           null,
@@ -31399,7 +31395,7 @@ var Phones = React.createClass({
       ),
       React.createElement(
         "div",
-        { style: divStyle, className: "phone panel panel-default" },
+        { style: divStyle, className: "phone" },
         React.createElement(
           "span",
           null,
@@ -31499,7 +31495,35 @@ module.exports = NavItem;
 var React = require('react');
 var List = require('../List.jsx');
 
-var cars = [{ "id": 1, "photo": "/img/2.jpg", "title": "Mercedes Sprinter", "price": "250 uah/km" }, { "id": 2, "photo": "/img/4.jpg", "title": "Mercedes Sprinter", "price": "240 uah/km" }, { "id": 3, "photo": "/img/5.jpg", "title": "Mercedes Sprinter", "price": "240 uah/km" }];
+var cars = [{
+  "id": 1,
+  "photo": "./img/2.jpg",
+  "title": "Mercedes Sprinter 413 Гидроборт",
+  "size": "ДШВ: 4.20м x 2.00м x 2.30м",
+  "priceCity": "Город: 15 грн/час, мин. 2 часа",
+  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
+}, {
+  "id": 2,
+  "photo": "./img/4.jpg",
+  "title": "Mercedes Sprinter 413 Мебельный фургон",
+  "size": "ДШВ: 4.50м x 2.21м x 2.10м",
+  "priceCity": "Город: 15 грн/час, мин. 2 часа",
+  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
+}, {
+  "id": 3,
+  "photo": "./img/5.jpg",
+  "title": "Mercedes Sprinter 416",
+  "size": "ДШВ: 4.25м x 1.80м x 1.80м",
+  "priceCity": "Город: 15 грн/час, мин. 2 часа",
+  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
+}, {
+  "id": 4,
+  "photo": "./img/1.jpg",
+  "title": "Газель Тент",
+  "size": "ДШВ: 5.10м x 2.00м x 2.20м",
+  "priceCity": "Город: 15 грн/час, мин. 2 часа",
+  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
+}];
 
 var Cars = React.createClass({
   displayName: 'Cars',
@@ -31534,75 +31558,79 @@ var Contacts = React.createClass({
 
     return React.createElement(
       "div",
-      { className: "container-fluid", style: { padding: 0 } },
+      { className: "container-fluid", style: { marginTop: 15, marginBottom: 15, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         "div",
-        { className: "row", style: { padding: 15 } },
+        { className: "panel panel-default", style: { margin: "auto" } },
         React.createElement(
           "div",
-          { className: "col-xs-12 col-sm-4 col-md-4 col-lg-4" },
-          React.createElement(
-            "h1",
-            null,
-            "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
-          ),
-          React.createElement(
-            "address",
-            null,
-            "\u0414\u043D\u0435\u043F\u0440\u043E\u043F\u0435\u0442\u0440\u043E\u0432\u0441\u043A\u0430\u044F \u043E\u0431\u043B. ",
-            React.createElement("br", null),
-            "\u0414\u043D\u0435\u043F\u0440\u043E\u043F\u0435\u0442\u0440\u043E\u0432\u0441\u043A\u0438\u0439 \u0440-\u043D ",
-            React.createElement("br", null),
-            "\u0441\u0435\u043B\u043E \u041D\u043E\u0432\u043E\u0430\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\u043E\u0432\u043A\u0430 ",
-            React.createElement("br", null),
-            "\u0443\u043B. \u0421\u0443\u0440\u0441\u043A\u0430\u044F, 100"
-          ),
-          React.createElement(
-            "h2",
-            null,
-            "\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u044B"
-          ),
+          { className: "row", style: { padding: 15 } },
           React.createElement(
             "div",
-            { className: "phone" },
+            { className: "col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center" },
             React.createElement(
-              "span",
+              "h1",
               null,
+              "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+            ),
+            React.createElement(
+              "address",
+              null,
+              "\u0414\u043D\u0435\u043F\u0440\u043E\u043F\u0435\u0442\u0440\u043E\u0432\u0441\u043A\u0430\u044F \u043E\u0431\u043B. ",
+              React.createElement("br", null),
+              "\u0414\u043D\u0435\u043F\u0440\u043E\u043F\u0435\u0442\u0440\u043E\u0432\u0441\u043A\u0438\u0439 \u0440-\u043D ",
+              React.createElement("br", null),
+              "\u0441\u0435\u043B\u043E \u041D\u043E\u0432\u043E\u0430\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\u043E\u0432\u043A\u0430 ",
+              React.createElement("br", null),
+              "\u0443\u043B. \u0421\u0443\u0440\u0441\u043A\u0430\u044F, 100"
+            ),
+            React.createElement(
+              "h2",
+              null,
+              "\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u044B"
+            ),
+            React.createElement(
+              "div",
+              { className: "phone" },
               React.createElement(
-                "a",
-                { href: "tel:+380987077344" },
-                "+38(098)707-73-44"
+                "span",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "tel:+380987077344" },
+                  "+38(098)707-73-44"
+                )
               )
+            ),
+            React.createElement(
+              "div",
+              { className: "phone" },
+              React.createElement(
+                "span",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "tel:+380507871230" },
+                  "+38(050)787-12-30"
+                )
+              )
+            ),
+            React.createElement(
+              "h3",
+              null,
+              "\u041A\u0440\u0443\u0433\u043B\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E"
             )
           ),
           React.createElement(
             "div",
-            { className: "phone" },
+            { className: "hidden-xs col-sm-8 col-md-8 col-lg-9" },
             React.createElement(
-              "span",
+              "h3",
               null,
-              React.createElement(
-                "a",
-                { href: "tel:+380507871230" },
-                "+38(050)787-12-30"
-              )
-            )
-          ),
-          React.createElement(
-            "h3",
-            null,
-            "\u041A\u0440\u0443\u0433\u043B\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E"
+              "\u0421\u0445\u0435\u043C\u0430 \u043F\u0440\u043E\u0435\u0437\u0434\u0430"
+            ),
+            React.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112877.5630915414!2d34.91295696464396!3d48.38373177219912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfa7c7bc65327%3A0xdc37b140e7434650!2z0KHRg9GA0YHRjNC60LAg0LLRg9C70LjRhtGPLCAxMDAsINCd0L7QstC-0L7Qu9C10LrRgdCw0L3QtNGA0ZbQstC60LAsINCU0L3RltC_0YDQvtC_0LXRgtGA0L7QstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA1MjA3MA!5e0!3m2!1sru!2sua!4v1478469488476", width: "100%", height: "400", frameBorder: "0", style: { border: 0 }, allowFullScreen: true })
           )
-        ),
-        React.createElement(
-          "div",
-          { className: "hidden-xs col-sm-8 col-md-8 col-lg-8" },
-          React.createElement(
-            "h3",
-            null,
-            "\u0421\u0445\u0435\u043C\u0430 \u043F\u0440\u043E\u0435\u0437\u0434\u0430"
-          ),
-          React.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112877.5630915414!2d34.91295696464396!3d48.38373177219912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfa7c7bc65327%3A0xdc37b140e7434650!2z0KHRg9GA0YHRjNC60LAg0LLRg9C70LjRhtGPLCAxMDAsINCd0L7QstC-0L7Qu9C10LrRgdCw0L3QtNGA0ZbQstC60LAsINCU0L3RltC_0YDQvtC_0LXRgtGA0L7QstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA1MjA3MA!5e0!3m2!1sru!2sua!4v1478469488476", width: "100%", height: "400", frameBorder: "0", style: { border: 0 }, allowFullScreen: true })
         )
       )
     );
@@ -31653,7 +31681,7 @@ var Photo = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid', style: { paddingTop: 15, paddingBottom: 15, baddingLeft: 0, paddingRight: 0 } },
+      { className: 'container-fluid', style: { paddingTop: 15, paddingBottom: 15, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         'div',
         { className: 'panel panel-default', style: { margin: "auto" } },
@@ -31664,100 +31692,100 @@ var Photo = React.createClass({
 });
 
 var PHOTO_SET = [{
-  src: '/img/1.jpg',
+  src: './img/1.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/1.jpg'
+    src: './img/1.jpg'
   }
 }, {
-  src: '/img/2.jpg',
+  src: './img/2.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/2.jpg'
+    src: './img/2.jpg'
   }
 }, {
-  src: '/img/3.jpg',
+  src: './img/3.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/3.jpg'
+    src: './img/3.jpg'
   }
 }, {
-  src: '/img/4.jpg',
+  src: './img/4.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/4.jpg'
+    src: './img/4.jpg'
   }
 }, {
-  src: '/img/5.jpg',
+  src: './img/5.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/5.jpg'
+    src: './img/5.jpg'
   }
 }, {
-  src: '/img/6.jpg',
+  src: './img/6.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/6.jpg'
+    src: './img/6.jpg'
   }
 }, {
-  src: '/img/1.jpg',
+  src: './img/1.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/1.jpg'
+    src: './img/1.jpg'
   }
 }, {
-  src: '/img/2.jpg',
+  src: './img/2.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/2.jpg'
+    src: './img/2.jpg'
   }
 }, {
-  src: '/img/3.jpg',
+  src: './img/3.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/3.jpg'
+    src: './img/3.jpg'
   }
 }, {
-  src: '/img/4.jpg',
+  src: './img/4.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/4.jpg'
+    src: './img/4.jpg'
   }
 }, {
-  src: '/img/5.jpg',
+  src: './img/5.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/5.jpg'
+    src: './img/5.jpg'
   }
 }, {
-  src: '/img/6.jpg',
+  src: './img/6.jpg',
   width: 1280,
   height: 960,
   aspectRatio: 1.33,
   lightboxImage: {
-    src: '/img/6.jpg'
+    src: './img/6.jpg'
   }
 }];
 
