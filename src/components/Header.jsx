@@ -19,7 +19,7 @@ var Header = React.createClass({
       }
 
       return(
-        <div className="page-header container-fluid" style={{padding:0,marginTop:15,marginBottom:15}}>
+        <div className="page-header container-fluid" style={{padding:0, marginTop:15, marginBottom:0}}>
           <div className="row hidden-xs" style={divStyle}>
             <div className="col-sm-12 col-md-12 col-lg-12" style={{paddingTop:20}}>
               <Logo />

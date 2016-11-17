@@ -31139,7 +31139,7 @@ var CarCard = React.createClass({
 
     return React.createElement(
       "div",
-      { style: divStyle, className: "row panel panel-default" },
+      { style: divStyle, className: "row" },
       React.createElement(
         "div",
         { className: "col-sm-6 col-md-4 col-lg-4 hidden-xs" },
@@ -31147,19 +31147,19 @@ var CarCard = React.createClass({
       ),
       React.createElement(
         "div",
-        { className: "col-xs-12 col-sm-6 col-md-8 col-lg-8" },
+        { className: "col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center" },
         React.createElement(
           "div",
-          { className: "panel-heading" },
+          { className: "" },
           React.createElement(
             "h3",
-            { className: "panel-title" },
+            { className: "" },
             this.props.title
           )
         ),
         React.createElement(
           "div",
-          { className: "panel-body" },
+          { className: "" },
           React.createElement(
             "div",
             null,
@@ -31195,7 +31195,7 @@ var Footer = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid', style: { paddingLeft: 0, paddingRight: 0 } },
+      { className: 'container-fluid', style: { paddingLeft: 0, paddingRight: 0, marginTop: 10 } },
       React.createElement(
         'div',
         { className: 'panel panel-default', style: { margin: "auto", height: 50 } },
@@ -31245,7 +31245,7 @@ var Header = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'page-header container-fluid', style: { padding: 0, marginTop: 15, marginBottom: 15 } },
+      { className: 'page-header container-fluid', style: { padding: 0, marginTop: 15, marginBottom: 0 } },
       React.createElement(
         'div',
         { className: 'row hidden-xs', style: divStyle },
@@ -31428,37 +31428,41 @@ var NavBar = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid', style: { padding: 0 } },
+      { className: 'container-fluid', style: { padding: 0, marginTop: 10, marginBottom: 10 } },
       React.createElement(
         'nav',
-        { className: 'navbar navbar-default', style: { borderRadius: 0, margin: 'auto' } },
+        { role: 'navigation', className: 'navbar navbar-default', style: { borderRadius: 0, margin: 'auto' } },
         React.createElement(
           'div',
-          { className: 'navbar-header', style: { paddingLeft: 15, paddingTop: 5 } },
+          { className: 'container', style: { margin: 0 } },
           React.createElement(
-            'button',
-            { type: 'button', style: { marginTop: 3 }, className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#nav-collapse' },
-            React.createElement('span', { className: 'icon-bar' }),
-            React.createElement('span', { className: 'icon-bar' }),
-            React.createElement('span', { className: 'icon-bar' })
+            'div',
+            { className: 'navbar-header', style: { paddingLeft: 15, paddingTop: 5 } },
+            React.createElement(
+              'button',
+              { type: 'button', style: { marginTop: 3 }, className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#nav-collapse', 'aria-expanded': 'false' },
+              React.createElement('span', { className: 'icon-bar' }),
+              React.createElement('span', { className: 'icon-bar' }),
+              React.createElement('span', { className: 'icon-bar' })
+            ),
+            React.createElement(
+              'h4',
+              null,
+              React.createElement(
+                Link,
+                { to: '/' },
+                '\u0413\u0440\u0443\u0437\u043E\u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0438 \u0414\u043D\u0435\u043F\u0440'
+              )
+            )
           ),
           React.createElement(
-            'h4',
-            null,
+            'div',
+            { className: 'collapse navbar-collapse', id: 'nav-collapse', 'aria-expanded': 'false' },
             React.createElement(
-              Link,
-              { to: '/' },
-              '\u0413\u0440\u0443\u0437\u043E\u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0438 \u0414\u043D\u0435\u043F\u0440'
+              'ul',
+              { className: 'nav navbar-nav' },
+              this.props.navData.map(createLinkItem)
             )
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'collapse navbar-collapse', id: 'nav-collapse' },
-          React.createElement(
-            'ul',
-            { className: 'nav navbar-nav' },
-            this.props.navData.map(createLinkItem)
           )
         )
       )
@@ -31537,7 +31541,11 @@ var Cars = React.createClass({
     return React.createElement(
       'div',
       { className: 'container-fluid', style: { padding: 0 } },
-      React.createElement(List, { carData: cars })
+      React.createElement(
+        'div',
+        { className: 'panel panel-default', style: { marginBottom: 0 } },
+        React.createElement(List, { carData: cars })
+      )
     );
   }
 });
@@ -31681,11 +31689,15 @@ var Photo = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'container-fluid', style: { paddingTop: 15, paddingBottom: 15, paddingLeft: 0, paddingRight: 0 } },
+      { className: 'container-fluid', style: { paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         'div',
         { className: 'panel panel-default', style: { margin: "auto" } },
-        React.createElement(Gallery, { photos: PHOTO_SET, lightboxShowImageCount: true })
+        React.createElement(
+          'div',
+          { style: { padding: 5 } },
+          React.createElement(Gallery, { photos: PHOTO_SET, lightboxShowImageCount: true })
+        )
       )
     );
   }
