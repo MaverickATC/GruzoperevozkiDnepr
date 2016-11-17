@@ -8,7 +8,7 @@ var CarCard = React.createClass({
   }
 
     return(
-
+        <div>
           <div style={divStyle} className="row">
             <div className="col-sm-6 col-md-4 col-lg-4 hidden-xs">
               <img style={{width:300, height:240, paddingTop:4}} src={this.props.photo} alt="carPhoto" />
@@ -24,7 +24,10 @@ var CarCard = React.createClass({
               </div>
             </div>
           </div>
-
+          <div style={{margin:0, padding:0}} className="row">
+            <hr color="#3f3f3f" height="2" style={{margin:0, padding:0}} />
+          </div>
+        </div>
     );
   }
 

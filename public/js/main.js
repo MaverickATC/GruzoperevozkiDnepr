@@ -31139,43 +31139,52 @@ var CarCard = React.createClass({
 
     return React.createElement(
       "div",
-      { style: divStyle, className: "row" },
+      null,
       React.createElement(
         "div",
-        { className: "col-sm-6 col-md-4 col-lg-4 hidden-xs" },
-        React.createElement("img", { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: "carPhoto" })
-      ),
-      React.createElement(
-        "div",
-        { className: "col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center" },
+        { style: divStyle, className: "row" },
         React.createElement(
           "div",
-          { className: "" },
-          React.createElement(
-            "h3",
-            { className: "" },
-            this.props.title
-          )
+          { className: "col-sm-6 col-md-4 col-lg-4 hidden-xs" },
+          React.createElement("img", { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: "carPhoto" })
         ),
         React.createElement(
           "div",
-          { className: "" },
+          { className: "col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center" },
           React.createElement(
             "div",
-            null,
-            this.props.size
+            { className: "" },
+            React.createElement(
+              "h3",
+              { className: "" },
+              this.props.title
+            )
           ),
           React.createElement(
             "div",
-            null,
-            this.props.priceCity
-          ),
-          React.createElement(
-            "div",
-            null,
-            this.props.priceUncity
+            { className: "" },
+            React.createElement(
+              "div",
+              null,
+              this.props.size
+            ),
+            React.createElement(
+              "div",
+              null,
+              this.props.priceCity
+            ),
+            React.createElement(
+              "div",
+              null,
+              this.props.priceUncity
+            )
           )
         )
+      ),
+      React.createElement(
+        "div",
+        { style: { margin: 0, padding: 0 }, className: "row" },
+        React.createElement("hr", { color: "#3f3f3f", height: "2", style: { margin: 0, padding: 0 } })
       )
     );
   }
@@ -31543,7 +31552,7 @@ var Cars = React.createClass({
       { className: 'container-fluid', style: { padding: 0 } },
       React.createElement(
         'div',
-        { className: 'panel panel-default', style: { marginBottom: 0 } },
+        { className: 'panel panel-default', style: { marginBottom: 0, borderRadius: 0 } },
         React.createElement(List, { carData: cars })
       )
     );
@@ -31566,10 +31575,10 @@ var Contacts = React.createClass({
 
     return React.createElement(
       "div",
-      { className: "container-fluid", style: { marginTop: 15, marginBottom: 15, paddingLeft: 0, paddingRight: 0 } },
+      { className: "container-fluid", style: { marginTop: 0, marginBottom: 0, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         "div",
-        { className: "panel panel-default", style: { margin: "auto" } },
+        { className: "panel panel-default", style: { margin: "auto", borderRadius: 0 } },
         React.createElement(
           "div",
           { className: "row", style: { padding: 15 } },
@@ -31664,7 +31673,7 @@ var Home = React.createClass({
       { className: "container-fluid", style: { padding: 0 } },
       React.createElement(
         "div",
-        { style: { padding: 15 } },
+        { className: "panel panel-default", style: { padding: 15, margin: 0, borderRadius: 0 } },
         React.createElement(
           "h1",
           null,
@@ -31692,7 +31701,7 @@ var Photo = React.createClass({
       { className: 'container-fluid', style: { paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         'div',
-        { className: 'panel panel-default', style: { margin: "auto" } },
+        { className: 'panel panel-default', style: { margin: "auto", borderRadius: 0 } },
         React.createElement(
           'div',
           { style: { padding: 5 } },

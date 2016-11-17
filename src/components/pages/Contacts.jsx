@@ -8,8 +8,8 @@ var Contacts = React.createClass({
     }
 
     return(
-      <div className="container-fluid" style={{marginTop:15,marginBottom:15,paddingLeft:0,paddingRight:0}}>
-        <div className="panel panel-default" style={{margin:"auto"}}>
+      <div className="container-fluid" style={{marginTop:0,marginBottom:0,paddingLeft:0,paddingRight:0}}>
+        <div className="panel panel-default" style={{margin:"auto", borderRadius:0}}>
           <div className="row" style={{padding:15}}>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center">
               <h1>Контакты</h1>
