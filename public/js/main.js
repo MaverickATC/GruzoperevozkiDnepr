@@ -31127,64 +31127,83 @@ module.exports = App;
 
 },{"./Footer.jsx":303,"./Header.jsx":304,"./nav/NavBar.jsx":310,"react":298}],302:[function(require,module,exports){
 var React = require('react');
+var Link = require('react-router').Link;
 
 var CarCard = React.createClass({
-  displayName: "CarCard",
+  displayName: 'CarCard',
 
   render: function () {
+
     var divStyle = {
       height: 250,
       margin: "auto"
     };
+    var linkStyle = {
+      color: "#777",
+      textShadow: "0 1px 0 rgba(255,255,255,.25)",
+      paddingTop: 10,
+      paddingBottom: 10,
+      //lineHeight: 20,
+      position: "relative",
+      display: "block",
+      padding: "10px 15px",
+      textDecoration: "none",
+      backgroundColor: "transparent",
+      width: "100%",
+      height: 50,
+      fontSize: "1.5em",
+      marginTop: 15
+    };
 
     return React.createElement(
-      "div",
+      'div',
       null,
       React.createElement(
-        "div",
-        { style: divStyle, className: "row" },
+        'div',
+        { style: divStyle, className: 'row' },
         React.createElement(
-          "div",
-          { className: "col-sm-6 col-md-4 col-lg-4 hidden-xs" },
-          React.createElement("img", { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: "carPhoto" })
+          'div',
+          { className: 'col-sm-6 col-md-4 col-lg-4 hidden-xs' },
+          React.createElement('img', { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: 'carPhoto' })
         ),
         React.createElement(
-          "div",
-          { className: "col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center" },
+          'div',
+          { className: 'col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center' },
           React.createElement(
-            "div",
-            { className: "" },
-            React.createElement(
-              "h3",
-              { className: "" },
-              this.props.title
-            )
+            'h3',
+            { className: '' },
+            this.props.title
           ),
           React.createElement(
-            "div",
-            { className: "" },
+            'div',
+            { className: '' },
             React.createElement(
-              "div",
+              'div',
               null,
               this.props.size
             ),
             React.createElement(
-              "div",
+              'div',
               null,
               this.props.priceCity
             ),
             React.createElement(
-              "div",
+              'div',
               null,
               this.props.priceUncity
             )
+          ),
+          React.createElement(
+            Link,
+            { style: linkStyle, to: '/contacts' },
+            '\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C'
           )
         )
       ),
       React.createElement(
-        "div",
-        { style: { margin: 0, padding: 0 }, className: "row" },
-        React.createElement("hr", { color: "#3f3f3f", height: "2", style: { margin: 0, padding: 0 } })
+        'div',
+        { style: { margin: 0, padding: 0 }, className: 'row' },
+        React.createElement('hr', { color: '#3f3f3f', height: '2', style: { margin: 0, padding: 0 } })
       )
     );
   }
@@ -31193,7 +31212,7 @@ var CarCard = React.createClass({
 
 module.exports = CarCard;
 
-},{"react":298}],303:[function(require,module,exports){
+},{"react":298,"react-router":90}],303:[function(require,module,exports){
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -31310,7 +31329,7 @@ var ListItem = React.createClass({
   render: function () {
     return React.createElement(
       'li',
-      { style: { listStyle: "none", paddingTop: 10 } },
+      { style: { listStyle: "none", paddingTop: 10, background: "-webkit-linear-gradient(#f8f8f8, #fff)" } },
       React.createElement(CarCard, { photo: this.props.photo, title: this.props.title, size: this.props.size, priceCity: this.props.priceCity, priceUncity: this.props.priceUncity })
     );
   }
@@ -31578,7 +31597,7 @@ var Contacts = React.createClass({
       { className: "container-fluid", style: { marginTop: 0, marginBottom: 0, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         "div",
-        { className: "panel panel-default", style: { margin: "auto", borderRadius: 0 } },
+        { className: "panel panel-default", style: { margin: "auto", borderRadius: 0, background: "-webkit-linear-gradient(#f8f8f8, #fff)" } },
         React.createElement(
           "div",
           { className: "row", style: { padding: 15 } },
@@ -31673,11 +31692,28 @@ var Home = React.createClass({
       { className: "container-fluid", style: { padding: 0 } },
       React.createElement(
         "div",
-        { className: "panel panel-default", style: { padding: 15, margin: 0, borderRadius: 0 } },
+        { className: "panel panel-default", style: { padding: 15, margin: 0, borderRadius: 0, background: "-webkit-linear-gradient(#f8f8f8, #fff)" } },
         React.createElement(
           "h1",
           null,
           "Home Page"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "\"\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E\" - \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u043D\u0430\u044F \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \u0438\u0437 \u0414\u043D\u0435\u043F\u0440\u0430. \u041C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F \u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0430\u043C\u0438 \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u043E \u0423\u043A\u0440\u0430\u0438\u043D\u0435 \u0431\u043E\u043B\u0435\u0435 \u0434\u0435\u0441\u044F\u0442\u0438 \u043B\u0435\u0442. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0434\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043D\u0430\u043C \u0441\u0432\u043E\u0439 \u0433\u0440\u0443\u0437, \u0430 \u043C\u044B \u043F\u043E\u0437\u0430\u0431\u043E\u0442\u0438\u043C\u0441\u044F \u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E \u0431\u044B\u0441\u0442\u0440\u043E\u0439 \u0438 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0439 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435.",
+          React.createElement(
+            "a",
+            { href: "#" },
+            "\u0417\u0434\u0435\u0441\u044C"
+          ),
+          " \u0438 ",
+          React.createElement(
+            "a",
+            { href: "#" },
+            "\u0417\u0434\u0435\u0441\u044C"
+          ),
+          " \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0441\u044F \u0441 \u043E\u0442\u0437\u044B\u0432\u0430\u043C\u0438 \u043D\u0430\u0448\u0438\u0445 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432."
         )
       )
     );
@@ -31701,7 +31737,7 @@ var Photo = React.createClass({
       { className: 'container-fluid', style: { paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 } },
       React.createElement(
         'div',
-        { className: 'panel panel-default', style: { margin: "auto", borderRadius: 0 } },
+        { className: 'panel panel-default', style: { margin: "auto", borderRadius: 0, background: "-webkit-linear-gradient(#f8f8f8, #fff)" } },
         React.createElement(
           'div',
           { style: { padding: 5 } },

@@ -9,7 +9,7 @@ var Photo = React.createClass({
 
     return(
       <div className="container-fluid" style={{paddingTop:0,paddingBottom:0,paddingLeft:0,paddingRight:0}}>
-        <div className="panel panel-default" style={{margin:"auto", borderRadius:0}}>
+        <div className="panel panel-default" style={{margin:"auto", borderRadius:0, background: "-webkit-linear-gradient(#f8f8f8, #fff)"}}>
           <div style={{padding:5}}>
             <Gallery photos={PHOTO_SET} lightboxShowImageCount={true}/>
           </div>
