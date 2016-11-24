@@ -16,7 +16,7 @@ var CarCard = React.createClass({
     //lineHeight: 20,
     position: "relative",
     display: "block",
-    padding: "10px 15px",
+    
     textDecoration: "none",
     backgroundColor: "transparent",
     width: "100%",

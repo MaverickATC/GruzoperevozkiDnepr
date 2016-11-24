@@ -31099,14 +31099,9 @@ var App = React.createClass({
   displayName: 'App',
 
   render() {
-    divStyle = {
-      //background: "#f0ebe5"
-
-    };
-
     return React.createElement(
       'div',
-      { style: divStyle, className: 'App' },
+      { className: 'App' },
       React.createElement(
         'header',
         null,
@@ -31146,7 +31141,7 @@ var CarCard = React.createClass({
       //lineHeight: 20,
       position: "relative",
       display: "block",
-      padding: "10px 15px",
+
       textDecoration: "none",
       backgroundColor: "transparent",
       width: "100%",
@@ -31267,10 +31262,6 @@ var Header = React.createClass({
       margin: 0
     };
 
-    var rowStyle = {
-      paddingTop: 20
-    };
-
     return React.createElement(
       'div',
       { className: 'page-header container-fluid', style: { padding: 0, marginTop: 15, marginBottom: 0 } },
@@ -31346,19 +31337,18 @@ var Logo = React.createClass({
 
   render() {
     var divStyle = {
-      width: 300,
-      background: "#aaa",
+      width: 200,
+      //background: "-webkit-linear-gradient(#f8f8f8, #fff)",
       height: 85,
-      marginTop: 5
+      marginTop: 10,
+      marginBottom: 15,
+      backgroundColor: "-webkit-linear-gradient(#f8f8f8, #fff)",
+      backgroundImage: "url(./img/logo.png)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "100% 100%"
     };
 
-    return React.createElement(
-      "div",
-      { style: divStyle, className: "logo" },
-      " Logo ",
-      React.createElement("br", null),
-      "\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E"
-    );
+    return React.createElement("div", { style: divStyle, className: "logo" });
   }
 });
 
@@ -31374,16 +31364,17 @@ var LogoMobile = React.createClass({
     var divStyle = {
       //width: 300,
       background: "#fff",
-      //height: 85,
+      height: "100%",
       margin: 0,
-      paddingTop: 20
+      paddingTop: 20,
+      backgroundColor: "-webkit-linear-gradient(#f8f8f8, #fff)",
+      backgroundImage: "url(./img/logo.png)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "80% 100%",
+      backgroundPosition: "top center"
     };
 
-    return React.createElement(
-      "div",
-      { style: divStyle, className: "logo text-center" },
-      "\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E"
-    );
+    return React.createElement("div", { style: divStyle, className: "logo text-center" });
   }
 });
 
@@ -31396,43 +31387,35 @@ var Phones = React.createClass({
   displayName: "Phones",
 
   render() {
-    var divStyle = {
-      width: 150,
-      background: "#aaa",
+    var spanStyle = {
+      display: "block",
+      width: 200,
+      //background: "-webkit-linear-gradient(#f8f8f8, #fff)",
       height: 40,
-      marginTop: 10,
+      marginTop: 5,
       paddingLeft: 5,
-      paddingRight: 5
+      paddingRight: 5,
+      borderRadius: 6,
+      textAlign: "center",
+      textDecoration: "none",
+      lineHeight: "180%",
+      fontSize: "1.5em",
+      textWeight: 700,
+      color: "#fff"
     };
 
     return React.createElement(
       "div",
-      null,
+      { className: "phone" },
       React.createElement(
-        "div",
-        { style: divStyle, className: "phone" },
-        React.createElement(
-          "span",
-          null,
-          React.createElement(
-            "a",
-            { href: "tel:+380987077344" },
-            "+38(098)707-73-44"
-          )
-        )
+        "span",
+        { style: spanStyle },
+        "+38(098)707-73-44"
       ),
       React.createElement(
-        "div",
-        { style: divStyle, className: "phone" },
-        React.createElement(
-          "span",
-          null,
-          React.createElement(
-            "a",
-            { href: "tel:+380507871230" },
-            "+38(050)787-12-30"
-          )
-        )
+        "span",
+        { style: spanStyle },
+        "+38(050)787-12-30"
       )
     );
   }
@@ -31561,11 +31544,6 @@ var Cars = React.createClass({
   displayName: 'Cars',
 
   render() {
-    var divStyle = {
-      //background: "#9eebe5",
-      width: "100%"
-    };
-
     return React.createElement(
       'div',
       { className: 'container-fluid', style: { padding: 0 } },
@@ -31587,9 +31565,20 @@ var Contacts = React.createClass({
   displayName: "Contacts",
 
   render() {
-    var divStyle = {
-      //background: "#f0ebe5",
-      width: "100%"
+    var linkStyle = {
+      color: "#777",
+      textShadow: "0 1px 0 rgba(255,255,255,.25)",
+      paddingTop: 10,
+      paddingBottom: 10,
+      position: "relative",
+      //display: "block",
+      textDecoration: "none",
+      textAllign: "center",
+      backgroundColor: "transparent",
+      width: "100%",
+      height: 50,
+      fontSize: "1.5em",
+      margin: 0
     };
 
     return React.createElement(
@@ -31629,14 +31618,13 @@ var Contacts = React.createClass({
               "div",
               { className: "phone" },
               React.createElement(
-                "span",
-                null,
-                React.createElement(
-                  "a",
-                  { href: "tel:+380987077344" },
-                  "+38(098)707-73-44"
-                )
-              )
+                "a",
+                { style: { textDecoration: "none", color: "#000", fontSize: "1.5em" }, href: "tel:+380987077344" },
+                "+38(098)707-73-44"
+              ),
+              " ",
+              React.createElement("br", null),
+              React.createElement("br", null)
             ),
             React.createElement(
               "div",
@@ -31646,7 +31634,7 @@ var Contacts = React.createClass({
                 null,
                 React.createElement(
                   "a",
-                  { href: "tel:+380507871230" },
+                  { style: { textDecoration: "none", color: "#000", fontSize: "1.5em" }, href: "tel:+380507871230" },
                   "+38(050)787-12-30"
                 )
               )
@@ -31655,11 +31643,28 @@ var Contacts = React.createClass({
               "h3",
               null,
               "\u041A\u0440\u0443\u0433\u043B\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E"
+            ),
+            React.createElement(
+              "p",
+              { style: { fontSize: "1.5em" } },
+              "\u0422\u0430\u043A\u0436\u0435 \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043D\u0430\u0441 \u043D\u0430\u0439\u0442\u0438 \u043D\u0430 \u0441\u0430\u0439\u0442\u0430\u0445 \u043D\u0430\u0448\u0438\u0445 \u043F\u0430\u0440\u0442\u043D\u0435\u0440\u043E\u0432 ",
+              React.createElement("br", null),
+              React.createElement(
+                "a",
+                { style: linkStyle, href: "http://della.ua/" },
+                "Della-\u0430\u0432\u0442\u043E\u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0438"
+              ),
+              React.createElement("br", null),
+              React.createElement(
+                "a",
+                { style: linkStyle, href: "https://lardi-trans.com/user/18961272329" },
+                "Lardi-trans"
+              )
             )
           ),
           React.createElement(
             "div",
-            { className: "hidden-xs col-sm-8 col-md-8 col-lg-9" },
+            { className: "col-xs-12 col-sm-8 col-md-8 col-lg-9" },
             React.createElement(
               "h3",
               null,
@@ -31682,11 +31687,6 @@ var Home = React.createClass({
   displayName: "Home",
 
   render() {
-    divStyle = {
-      //background: "#f0ebe5",
-      width: "100%"
-    };
-
     return React.createElement(
       "div",
       { className: "container-fluid", style: { padding: 0 } },
@@ -31694,26 +31694,14 @@ var Home = React.createClass({
         "div",
         { className: "panel panel-default", style: { padding: 15, margin: 0, borderRadius: 0, background: "-webkit-linear-gradient(#f8f8f8, #fff)" } },
         React.createElement(
-          "h1",
-          null,
-          "Home Page"
-        ),
-        React.createElement(
           "p",
           null,
-          "\"\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E\" - \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u043D\u0430\u044F \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \u0438\u0437 \u0414\u043D\u0435\u043F\u0440\u0430. \u041C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F \u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0430\u043C\u0438 \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u043E \u0423\u043A\u0440\u0430\u0438\u043D\u0435 \u0431\u043E\u043B\u0435\u0435 \u0434\u0435\u0441\u044F\u0442\u0438 \u043B\u0435\u0442. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0434\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043D\u0430\u043C \u0441\u0432\u043E\u0439 \u0433\u0440\u0443\u0437, \u0430 \u043C\u044B \u043F\u043E\u0437\u0430\u0431\u043E\u0442\u0438\u043C\u0441\u044F \u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E \u0431\u044B\u0441\u0442\u0440\u043E\u0439 \u0438 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0439 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435.",
           React.createElement(
-            "a",
-            { href: "#" },
-            "\u0417\u0434\u0435\u0441\u044C"
+            "b",
+            null,
+            "\"\u0427\u041F \u0410\u043D\u0434\u0440\u0435\u0439\u0447\u0435\u043D\u043A\u043E\""
           ),
-          " \u0438 ",
-          React.createElement(
-            "a",
-            { href: "#" },
-            "\u0417\u0434\u0435\u0441\u044C"
-          ),
-          " \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0441\u044F \u0441 \u043E\u0442\u0437\u044B\u0432\u0430\u043C\u0438 \u043D\u0430\u0448\u0438\u0445 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432."
+          " - \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u043D\u0430\u044F \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \u0441 \u0431\u043E\u043B\u044C\u0448\u0438\u043C \u043E\u043F\u044B\u0442\u043E\u043C. \u041C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F \u043F\u0435\u0440\u0435\u0432\u043E\u0437\u043A\u0430\u043C\u0438 \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u043E \u0423\u043A\u0440\u0430\u0438\u043D\u0435 \u0431\u043E\u043B\u0435\u0435 \u0434\u0435\u0441\u044F\u0442\u0438 \u043B\u0435\u0442. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0434\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043D\u0430\u043C \u0441\u0432\u043E\u0439 \u0433\u0440\u0443\u0437, \u0430 \u043C\u044B \u043F\u043E\u0437\u0430\u0431\u043E\u0442\u0438\u043C\u0441\u044F \u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E \u0431\u044B\u0441\u0442\u0440\u043E\u0439 \u0438 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0439 \u0434\u043E\u0441\u0442\u0430\u0432\u043A\u0435. \u0417\u0430 \u0433\u043E\u0434\u044B \u0440\u0430\u0431\u043E\u0442\u044B \u0431\u044B\u043B\u0430 \u043D\u0430\u043A\u043E\u043F\u043B\u0435\u043D\u0430 \u0431\u043E\u043B\u044C\u0448\u0430\u044F \u0431\u0430\u0437\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432."
         )
       )
     );

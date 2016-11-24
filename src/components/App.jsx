@@ -27,13 +27,8 @@ var navLinks = [
 
 var App = React.createClass({
     render() {
-      divStyle = {
-        //background: "#f0ebe5"
-
-      }
-
       return(
-        <div style={divStyle} className="App">
+        <div className="App">
           <header><Header /></header>
           <NavBar navData={navLinks} />
           {this.props.children}

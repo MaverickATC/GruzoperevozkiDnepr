@@ -14,10 +14,6 @@ var Header = React.createClass({
         margin: 0
       }
 
-      var rowStyle = {
-          paddingTop: 20
-      }
-
       return(
         <div className="page-header container-fluid" style={{padding:0, marginTop:15, marginBottom:0}}>
           <div className="row hidden-xs" style={divStyle}>

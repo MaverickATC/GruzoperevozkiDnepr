@@ -2,23 +2,27 @@ var React = require('react');
 
 var Phones = React.createClass({
   render(){
-    var divStyle = {
-        width: 150,
-        background: "#aaa",
+    var spanStyle = {
+        display: "block",
+        width: 200,
+        //background: "-webkit-linear-gradient(#f8f8f8, #fff)",
         height: 40,
-        marginTop: 10,
+        marginTop: 5,
         paddingLeft: 5,
-        paddingRight: 5
+        paddingRight: 5,
+        borderRadius: 6,
+        textAlign: "center",
+        textDecoration: "none",
+        lineHeight: "180%",
+        fontSize: "1.5em",
+        textWeight: 700,
+        color: "#fff"
     }
 
     return(
-      <div>
-        <div style={divStyle} className="phone">
-          <span><a href="tel:+380987077344">+38(098)707-73-44</a></span>
-        </div>
-        <div style={divStyle} className="phone">
-          <span><a href="tel:+380507871230">+38(050)787-12-30</a></span>
-        </div>
+      <div className="phone">
+        <span style={spanStyle}>+38(098)707-73-44</span>
+        <span style={spanStyle}>+38(050)787-12-30</span>
       </div>
     );
   }
