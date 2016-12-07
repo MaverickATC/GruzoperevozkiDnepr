@@ -16,7 +16,7 @@ var CarCard = React.createClass({
     //lineHeight: 20,
     position: "relative",
     display: "block",
-    
+
     textDecoration: "none",
     backgroundColor: "transparent",
     width: "100%",
@@ -29,7 +29,7 @@ var CarCard = React.createClass({
         <div>
           <div style={divStyle} className="row">
             <div className="col-sm-6 col-md-4 col-lg-4 hidden-xs">
-              <img style={{width:300, height:240, paddingTop:4}} src={this.props.photo} alt="carPhoto" />
+              <img style={{width:300, height:240, paddingTop:4}} src={this.props.photo} alt={this.props.title} />
             </div>
             <div className="col-xs-12 col-sm-6 col-md-8 col-lg-8 text-center">
               <h3 className="">{this.props.title}</h3>

@@ -31159,7 +31159,7 @@ var CarCard = React.createClass({
         React.createElement(
           'div',
           { className: 'col-sm-6 col-md-4 col-lg-4 hidden-xs' },
-          React.createElement('img', { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: 'carPhoto' })
+          React.createElement('img', { style: { width: 300, height: 240, paddingTop: 4 }, src: this.props.photo, alt: this.props.title })
         ),
         React.createElement(
           'div',
@@ -31508,37 +31508,8 @@ module.exports = NavItem;
 
 },{"react":298,"react-router":90}],312:[function(require,module,exports){
 var React = require('react');
+var carList = require('./cars.json');
 var List = require('../List.jsx');
-
-var cars = [{
-  "id": 1,
-  "photo": "./img/2.jpg",
-  "title": "Mercedes Sprinter 413 Гидроборт",
-  "size": "ДШВ: 4.20м x 2.00м x 2.30м",
-  "priceCity": "Город: 15 грн/час, мин. 2 часа",
-  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
-}, {
-  "id": 2,
-  "photo": "./img/4.jpg",
-  "title": "Mercedes Sprinter 413 Мебельный фургон",
-  "size": "ДШВ: 4.50м x 2.21м x 2.10м",
-  "priceCity": "Город: 15 грн/час, мин. 2 часа",
-  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
-}, {
-  "id": 3,
-  "photo": "./img/5.jpg",
-  "title": "Mercedes Sprinter 416",
-  "size": "ДШВ: 4.25м x 1.80м x 1.80м",
-  "priceCity": "Город: 15 грн/час, мин. 2 часа",
-  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
-}, {
-  "id": 4,
-  "photo": "./img/1.jpg",
-  "title": "Газель Тент",
-  "size": "ДШВ: 5.10м x 2.00м x 2.20м",
-  "priceCity": "Город: 15 грн/час, мин. 2 часа",
-  "priceUncity": "За городом: 5 грн/км, оплата пути в оба конца"
-}];
 
 var Cars = React.createClass({
   displayName: 'Cars',
@@ -31550,7 +31521,7 @@ var Cars = React.createClass({
       React.createElement(
         'div',
         { className: 'panel panel-default', style: { marginBottom: 0, borderRadius: 0 } },
-        React.createElement(List, { carData: cars })
+        React.createElement(List, { carData: carList })
       )
     );
   }
@@ -31558,7 +31529,7 @@ var Cars = React.createClass({
 
 module.exports = Cars;
 
-},{"../List.jsx":305,"react":298}],313:[function(require,module,exports){
+},{"../List.jsx":305,"./cars.json":316,"react":298}],313:[function(require,module,exports){
 var React = require('react');
 
 var Contacts = React.createClass({
@@ -31713,6 +31684,7 @@ module.exports = Home;
 },{"react":298}],315:[function(require,module,exports){
 var React = require('react');
 var Gallery = require('react-photo-gallery');
+var PHOTO_SET = require('./photos.json');
 
 var Photo = React.createClass({
   displayName: 'Photo',
@@ -31736,111 +31708,107 @@ var Photo = React.createClass({
   }
 });
 
-var PHOTO_SET = [{
-  src: './img/1.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/1.jpg'
-  }
-}, {
-  src: './img/2.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/2.jpg'
-  }
-}, {
-  src: './img/3.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/3.jpg'
-  }
-}, {
-  src: './img/4.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/4.jpg'
-  }
-}, {
-  src: './img/5.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/5.jpg'
-  }
-}, {
-  src: './img/6.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/6.jpg'
-  }
-}, {
-  src: './img/1.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/1.jpg'
-  }
-}, {
-  src: './img/2.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/2.jpg'
-  }
-}, {
-  src: './img/3.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/3.jpg'
-  }
-}, {
-  src: './img/4.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/4.jpg'
-  }
-}, {
-  src: './img/5.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/5.jpg'
-  }
-}, {
-  src: './img/6.jpg',
-  width: 1280,
-  height: 960,
-  aspectRatio: 1.33,
-  lightboxImage: {
-    src: './img/6.jpg'
-  }
-}];
-
 module.exports = Photo;
 
-},{"react":298,"react-photo-gallery":20}],316:[function(require,module,exports){
+},{"./photos.json":317,"react":298,"react-photo-gallery":20}],316:[function(require,module,exports){
+module.exports=[
+  {
+    "id":1,
+    "photo":"./img/car1.jpg",
+    "title":"Mercedes Sprinter 413 Гидроборт",
+    "size":"ДШВ: 4.20м x 2.00м x 2.30м",
+    "priceCity":"Город: 15 грн/час, мин. 2 часа",
+    "priceUncity":"За городом: 5 грн/км, оплата пути в оба конца"
+  },
+  {
+    "id":2,
+    "photo":"./img/car2.jpg",
+    "title":"Mercedes Sprinter 413 Мебельный фургон",
+    "size":"ДШВ: 4.50м x 2.21м x 2.10м",
+    "priceCity":"Город: 15 грн/час, мин. 2 часа",
+    "priceUncity":"За городом: 5 грн/км, оплата пути в оба конца"
+  },
+  {
+    "id":3,
+    "photo":"./img/car3.jpg",
+    "title":"Mercedes Sprinter 416",
+    "size":"ДШВ: 4.25м x 1.80м x 1.80м",
+    "priceCity":"Город: 15 грн/час, мин. 2 часа",
+    "priceUncity":"За городом: 5 грн/км, оплата пути в оба конца"
+  },
+  {
+    "id":4,
+    "photo":"./img/car4.jpg",
+    "title":"Газель Тент",
+    "size":"ДШВ: 5.10м x 2.00м x 2.20м",
+    "priceCity":"Город: 15 грн/час, мин. 2 часа",
+    "priceUncity":"За городом: 5 грн/км, оплата пути в оба конца"
+  }
+]
+
+},{}],317:[function(require,module,exports){
+module.exports=[
+  {
+    "src": './img/1.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/1.jpg'
+    }
+  },
+  {
+    "src": './img/2.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/2.jpg'
+    }
+  },
+  {
+    "src": './img/3.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/3.jpg'
+    }
+  },
+  {
+    "src": './img/4.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/4.jpg'
+    }
+  },
+  {
+    "src": './img/5.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/5.jpg'
+    }
+  },
+  {
+    "src": './img/6.jpg',
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.33,
+    "lightboxImage":{
+    "src": './img/6.jpg'
+    }
+  }
+]
+
+},{}],318:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Routes = require('./Routs.jsx');
 
 ReactDOM.render(Routes, document.getElementById('app'));
 
-},{"./Routs.jsx":300,"react":298,"react-dom":19}]},{},[316]);
+},{"./Routs.jsx":300,"react":298,"react-dom":19}]},{},[318]);
